@@ -12,11 +12,6 @@ function App() {
   return (
     <div className="App">
       <Hello />
-      <Welcome />
-      <h1>Hello, {name}
-      </h1>
-      <a href={naver.url}>{naver.name}</a>
-      <div className={styles.box}>box</div>
     </div>
   );
 }
