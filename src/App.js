@@ -1,6 +1,7 @@
 import './App.css';
 import Hello from './component/Hello';
-import Welcome from './component/Welcome'
+import Welcome from './component/Welcome';
+import styles from './App.module.css';
 
 function App() {
   const name ="yerin";
@@ -12,13 +13,10 @@ function App() {
     <div className="App">
       <Hello />
       <Welcome />
-      <h1 style={{
-        color: "gold",
-        backgroundColor:"gray"
-      }}>Hello, {name}
-      <p>{2+3}</p>
+      <h1>Hello, {name}
       </h1>
       <a href={naver.url}>{naver.name}</a>
+      <div className={styles.box}>box</div>
     </div>
   );
 }
