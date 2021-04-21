@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Word({ word: w }){
     const [word, setWord] = useState(w);
