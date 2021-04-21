@@ -1,33 +1,20 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 export default function DayList(){
-    const [days, setDays] = useState([]);
-    const [count, setCount] = useState(0);
-
-    function onClick() {
-        setCount(count + 1);
-    }
-
-    function onClick2() {
-        setDays([
-            ...days,
-            {
-                id:Math.random(),
-                day:1,
-            }
-        ]);
-    }
+    const days = useFetch("http://localhost:3001/days")
     
-    useEffect(() => {
-        fetch("http://localhost:3001/days")
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setDays(data);
-        });
-    }, []);
+    // const [days, setDays] = useState([]);
+    
+    // useEffect(() => {
+    //     fetch("http://localhost:3001/days")
+    //     .then(res => {
+    //         return res.json();
+    //     })
+    //     .then(data => {
+    //         setDays(data);
+    //     });
+    // }, []);
 
     return (
     <>
@@ -38,8 +25,8 @@ export default function DayList(){
             </li>
         ))}
     </ul>
-    <button onClick={onClick}>{count}</button>
-    <button onClick={onClick2}>Day Change</button>
+    {/* <button onClick={onClick}>{count}</button>
+    <button onClick={onClick2}>Day Change</button> */}
     </>
     );
 }
